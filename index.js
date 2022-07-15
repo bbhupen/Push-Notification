@@ -5,7 +5,7 @@ const webpush = require('web-push')
 require('dotenv').config();
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT
 
 const publicVapidKey = process.env.VAPID_PUBLIC_KEY
 
