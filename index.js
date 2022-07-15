@@ -2,13 +2,14 @@ const express = require('express')
 const path = require('path')
 const bodyparser = require('body-parser')
 const webpush = require('web-push')
+require('dotenv').config();
 
 const app = express()
 const PORT = 3000
 
-const publicVapidKey = "BLDWl3yIGDWt1r0ZBxTTbmBW4aWS_ANClYl3EOmxh7FAANHQWEJOS0lMSeGaoha65eXG2GppZbkI7ne5dVzpz3Y"
+const publicVapidKey = process.env.VAPID_PUBLIC_KEY
 
-const privateVapidKey= "rr5zeP0T29H_MxNRXPuCeYH4as4p8CxZD0liNOYQVyM"
+const privateVapidKey= process.env.VAPID_PRIVATE_KEY
 
 webpush.setVapidDetails('mailto:test@test.com', publicVapidKey, privateVapidKey)
 
@@ -33,8 +34,6 @@ app.listen(PORT || process.env.PORT , ()=>{
     console.log(`Listening on port ${PORT} or visit http://localhost:${PORT}/`)
   })
 
-
-  
 
 module.exports = app
 
