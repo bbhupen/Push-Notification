@@ -29,8 +29,10 @@ app.post('/subscribe', (req, res) => {
     webpush.sendNotification(subscription, payload).catch(err => console.error(err))
 })
 
-app.listen(PORT, () => 
-console.log(`Server started on PORT ${PORT}`))
+app.listen(PORT , ()=>{
+    console.log(`Listening on port ${PORT} or visit http://localhost:${PORT}/`)
+  })
 
 
+module.exports = app
 
