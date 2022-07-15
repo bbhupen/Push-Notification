@@ -4,7 +4,7 @@ const bodyparser = require('body-parser')
 const webpush = require('web-push')
 
 const app = express()
-const port = 3000
+const PORT = 3000
 
 const publicVapidKey = "BLDWl3yIGDWt1r0ZBxTTbmBW4aWS_ANClYl3EOmxh7FAANHQWEJOS0lMSeGaoha65eXG2GppZbkI7ne5dVzpz3Y"
 
@@ -29,8 +29,8 @@ app.post('/subscribe', (req, res) => {
     webpush.sendNotification(subscription, payload).catch(err => console.error(err))
 })
 
-app.listen(port, () => 
-console.log(`Server started on port ${port}`))
+app.listen(PORT, () => 
+console.log(`Server started on PORT ${PORT}`))
 
 
 
