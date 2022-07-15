@@ -3,7 +3,7 @@ importScripts(
 );
 
 workbox.routing.registerRoute(
-  ({request}) => request.destination === 'image',
+  ({ request }) => request.destination === 'image',
   new workbox.strategies.CacheFirst()
 )
 
@@ -15,7 +15,10 @@ self.addEventListener('push', event => {
   const data = event.data.json()
   console.log(data.body)
   self.registration.showNotification(data.title, {
-    body: data.body
+    body: 'Buzz! Buzz!',
+    icon: 'logo/apple-icon-180.png',
+    vibrate: [200, 100, 200, 100, 200, 100, 200],
+    tag: 'vibration-sample'
   })
 })
 
