@@ -16,7 +16,7 @@ self.addEventListener('push', event => {
   console.log(data.body)
   self.registration.showNotification(data.title, {
     body: 'Buzz! Buzz!',
-    icon: 'logo/apple-icon-180.png',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png',
     vibrate: [200, 100, 200, 100, 200, 100, 200],
     tag: 'vibration-sample'
   })
