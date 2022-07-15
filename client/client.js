@@ -1,5 +1,19 @@
 const publicVapidKey = "BLDWl3yIGDWt1r0ZBxTTbmBW4aWS_ANClYl3EOmxh7FAANHQWEJOS0lMSeGaoha65eXG2GppZbkI7ne5dVzpz3Y"
 
+const button = document.getElementById('notifications');
+
+
+button.addEventListener('click', () => {
+  Notification.requestPermission().then((result) => {
+    if (result === 'granted') {
+      randomNotification();
+    }
+  });
+})
+
+
+
+
 //Register Service Worker
 if ('serviceWorker' in navigator) {
     send().catch(err => console.error(err))
